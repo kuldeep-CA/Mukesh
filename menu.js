@@ -531,10 +531,14 @@ const menuItems = [
 let currentFilter = 'all';
 let selectedItemId = null;
 
+// Get cart from localStorage (access from script.js)
+let cart = JSON.parse(localStorage.getItem('foodVanCart')) || [];
+
 // Initialize menu on page load
 document.addEventListener('DOMContentLoaded', function() {
     renderMenuItems(menuItems);
     setupFilterButtons();
+    updateCartCount();
 });
 
 // ============================================
@@ -656,4 +660,11 @@ function addToCart() {
 
 function saveCart() {
     localStorage.setItem('foodVanCart', JSON.stringify(cart));
+}
+
+function updateCartCount() {
+    const cartCount = document.getElementById('cart-count');
+    if (cartCount) {
+        cartCount.textContent = cart.length;
+    }
 }

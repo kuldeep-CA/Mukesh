@@ -1305,7 +1305,21 @@ p {
     }
 
     .testimonials-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 1fr;
+    }
+
+    .testimonial-card {
+        padding: 20px;
+        border-top: 3px solid var(--primary-color);
+    }
+
+    .testimonial-text {
+        font-size: 0.85rem;
+        line-height: 1.5;
+    }
+
+    .testimonial-author {
+        font-size: 0.8rem;
     }
 
     .filter-buttons {
